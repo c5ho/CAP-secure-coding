@@ -1,2 +1,2 @@
 all:
-	gcc -o filesize sample.c
+	gcc -o filesize simLab2Ex1.c
