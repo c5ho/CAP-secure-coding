@@ -1,2 +1,3 @@
 all:
-	gcc -o main simLab2Ex2.c sample.c
+	gcc -o filesize simLab2Ex1.c
+	./filesize test.txt
