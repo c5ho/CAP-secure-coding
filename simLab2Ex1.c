@@ -6,13 +6,17 @@
                                 
 // This program prints the size of a specified file in bytes
 int main(int argc, char** argv) {
+
     // Ensure that the user supplied exactly one command line argument
     if (argc != 2) {
       fprintf(stderr, "Please provide the address of a file as an input.\n");
       return -1;
     }
     char cmd[BUFSIZE] = "wc -c < ";
+    char *argument = argv[1];
+    char cleanedArg[1000] = {0};
+    encodeShellString(cleanedArg, 1000, argument);
     
-    strcat(cmd, encodeShellString(cmd, 1000, argv[1]));
+    strcat(cmd, cleanedArg);
     system(cmd);
 }
